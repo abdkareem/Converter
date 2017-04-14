@@ -2,9 +2,10 @@ var chai = require("chai");
 var expect = chai.expect;
 var converter = require("../app/converter");
 var hexToRgb = converter.hexToRgb;
+var rgbToHex = converter.rgbToHex;
 
-describe("Testing color code converter", function() {
-    describe("Testing hex to rgb conversion", function() {
+describe("Testing color code converter:", function() {
+    describe("a)Testing hex to rgb conversion:", function() {
         it("test gold conversion", function(){
             var gold = hexToRgb("FFD700");
             expect(gold).to.deep.equal([ 255, 215, 0 ]);
@@ -18,10 +19,10 @@ describe("Testing color code converter", function() {
             expect(bronze).to.deep.equal([139, 69, 19])
         })
     });
-    /*
-    describe("Hex to RGB conversion", function(){
-        it("convert basic colors", function(){
-
-        });
-    }); */
+    describe("b)Testing rgb to hex conversion:", function(){
+        it('testing midnight blue conversion', function() {
+            var steelblue = rgbToHex(70, 130, 180);
+            expect(steelblue).to.deep.equal("4682b4")
+        })
+    })
 });
